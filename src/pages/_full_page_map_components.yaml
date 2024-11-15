@@ -31,7 +31,7 @@
 - id: 'accessibility-layer'
   label: 'Accessibility'
   toggle: true
-  visible: true
+  visible: false
   layers:
     - id: 'buffer-500m'
       url: 'https://yc4529.github.io/astro-maplibre-template/data/500m.geojson'
@@ -69,7 +69,7 @@
       type: 'circle'
       paint:
         circle-color: '#FFFFFF'  
-        circle-radius: 5
+        circle-radius: 4
         circle-opacity: 0.8
 
 
