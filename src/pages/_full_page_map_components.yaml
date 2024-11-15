@@ -6,7 +6,7 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
   paint:
     circle-color: '#FFA500'
-    circle-radius: 5
+    circle-radius: 3
     circle-opacity: 0.8
 
 - id: 'elementary-school-zones'
@@ -17,8 +17,8 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
   paint:
     line-color: '#000000'  
-    line-width: 1
-
+    line-width: 0.8
+    line-opacity: 0.8
 
 - id: 'bikes'
   label: 'Bike Lanes'
