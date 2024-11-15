@@ -29,7 +29,7 @@
     line-opacity: 0.5
 
 - id: 'accessibility-layer'
-  label: 'School Accessibility Zones'
+  label: 'Accessibility'
   toggle: true
   visible: true
   layers:
