@@ -9,7 +9,7 @@
     circle-radius: 3
     circle-opacity: 0.8
   mouseEvent:
-    - type: "hover"
+    - type: "click"
       content:
         - p:
             - str: "School Name: "
