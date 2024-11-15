@@ -12,21 +12,21 @@
   bearing: 0
   description: This map shows the locations of elementary schools and their school zones in New York City. Each point represents a school location, and the boundaries indicate each school's zone. 
   layers:
-  - id: 'elementary-school'
-    url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary%20School%20Locations.geojson'  
+  - id: 'elementary-school-locations'
+    url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'  
     type: 'circle'
     paint:
       circle-radius: 5
-      circle-color: '#826260'
+      circle-color: '#FFA500'  
       circle-opacity: 0.8
 
-  - id: 'school-zones'
-    url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary%20School%20Zones.geojson'  
+  - id: 'elementary-school-zones'
+    url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'  
     type: 'fill'
     paint:
-      fill-color: '#FFA500'  
-      fill-opacity: 0.2       
-      line-color: '#FF4500'  
-      line-width: 1           
+      fill-color: '#FFD700'   
+      fill-opacity: 0.3       
+      line-color: '#FF4500'   
+      line-width: 1         
 
     
