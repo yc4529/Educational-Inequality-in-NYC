@@ -6,7 +6,7 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
   paint:
     circle-color: '#FFA500'
-    circle-radius: 3
+    circle-radius: 4
     circle-opacity: 0.8
   mouseEvent:
     - type: "click"
@@ -15,7 +15,6 @@
             - str: "School Name: "
             - property: "location_n"
               else: "N/A"
-
 
 
 - id: 'elementary-school-zones'
@@ -27,37 +26,50 @@
   paint:
     line-color: '#000000'  
     line-width: 0.8
-    line-opacity: 0.6
+    line-opacity: 0.5
 
-- id: 'bikes'
-  label: 'Bike Lanes'
-  toggle: true  
-  visible: false
-  data-type: 'geojson'
-  layer-type: 'line'
-  url: 'https://data.cityofnewyork.us/resource/mzxg-pwib.geojson?$limit=10000'
-  paint:
-    line-color: '#000000'
-    line-width: 3
-
-- id: 'pizza'
-  label: 'Pizza Places'
+- id: 'accessibility-layer'
+  label: 'School Accessibility Zones'
   toggle: true
   visible: true
-  data-type: 'geojson'
-  layer-type: 'circle'
-  url: 'https://data.cityofnewyork.us/resource/43nn-pn8j.geojson?cuisine_description=Pizza&$limit=10000'
-  paint:
-    circle-color: '#ff0000'
-    circle-radius: 5
-  mouseEvent:
-    - type: "click"
-      content:
-        - h1:
-            - str: "Feature Info"
-        - p:
-            - str: "Description"
-        - p:
-            - str: "Name: "
-            - property: "dba"
-              else: "N/A"
+  layers:
+    - id: 'buffer-500m'
+      url: 'https://yc4529.github.io/astro-maplibre-template/data/500m.geojson'
+      type: 'fill'
+      paint:
+        fill-color: '#FFEDA0'  
+        fill-opacity: 0.3
+
+    - id: 'buffer-1000m'
+      url: 'https://yc4529.github.io/astro-maplibre-template/data/1000m.geojson'
+      type: 'fill'
+      paint:
+        fill-color: '#FEB24C'  
+        fill-opacity: 0.3
+
+    - id: 'buffer-1500m'
+      url: 'https://yc4529.github.io/astro-maplibre-template/data/1500m.geojson'
+      type: 'fill'
+      paint:
+        fill-color: '#F03B20'  
+        fill-opacity: 0.3
+
+    - id: 'school-zones'
+      url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
+      type: 'fill'
+      paint:
+        fill-color: '#B22222'  
+        fill-opacity: 0.4
+        line-color: '#000000'  
+        line-width: 0.8
+        line-opacity: 0.5
+
+    - id: 'school-locations'
+      url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
+      type: 'circle'
+      paint:
+        circle-color: '#FFFFFF'  
+        circle-radius: 5
+        circle-opacity: 0.8
+
+
