@@ -31,7 +31,7 @@
 - id: 'accessibility-layer'
   label: 'Accessibility'
   toggle: true
-  visible: false
+  visible: true
   layers:
     - id: 'buffer-500m'
       url: 'https://yc4529.github.io/astro-maplibre-template/data/500m.geojson'
