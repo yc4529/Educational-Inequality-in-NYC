@@ -8,13 +8,13 @@
     circle-color: '#FFA500'
     circle-radius: 3
     circle-opacity: 0.8
-    mouseEvent:
-  - type: "hover"
-    content:
-      - p: 
-          - str: "School Name: "
-          - property: "location_n"
-          - else: "N/A"
+  mouseEvent:
+    - type: "hover"
+      content:
+        - p:
+            - str: "School Name: "
+            - property: "location_n"
+              else: "N/A"
 
 
 
