@@ -1,10 +1,34 @@
-- title: Introduction
+- title: Educational Inequlaity in NYC
   center: [-74.0060, 40.7128]
   zoom: 10
   pitch: 0
   bearing: 0
-  description: Welcome to the map scrollytelling app. You can set position, zoom, pitch, and bearing via the top-level props.
+  description: The core research question is, “How does educational inequality manifest across different areas of New York City?” This study analyzes regional differences in educational factors, visualizing patterns of inequality. The aim is to highlight disparities, identify areas needing improvement, and offer insights for those assessing educational environments when relocating.
 
+- title: Section Title - Elementary School and School Zones
+  center: [-73.96778, 40.78376]
+  zoom: 10
+  pitch: 0
+  bearing: 0
+  description: Now we zoom in. A layer is added from a geojson  Layer paint properties are passed, and layers are set to turn off when you continue scrolling via the `persist:false` attribute.
+  
+  layers:
+  # id of layer
+  - id: 'squirrel-census'
+  # path to dataset 
+  # note anything uploaded in the public/data folder will be uploaded to your site at url/data/file.png
+    url: './data/squirrel20241021.geojson'
+  # type of symbol
+    type: 'circle'
+  # type of symbol
+    data-type: 'geojson'
+    layer-type: 'circle'
+    persist: true
+    paint:
+      circle-radius: 5
+      circle-color: '#826260'
+      circle-opacity: 0.8
+      
 - title: Section Title - Squirrels in Central Park
   center: [-73.96778, 40.78376]
   zoom: 14
