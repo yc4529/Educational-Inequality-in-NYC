@@ -8,6 +8,13 @@
     circle-color: '#FFA500'
     circle-radius: 3
     circle-opacity: 0.8
+  mouseEvent:
+    - type: 'hover'   
+      content:
+        - p:
+            - str: "School Name: "
+            - property: "location_n"
+            else: "N/A"
 
 - id: 'elementary-school-zones'
   label: 'Elementary School Zones'
@@ -18,7 +25,7 @@
   paint:
     line-color: '#000000'  
     line-width: 0.8
-    line-opacity: 0.8
+    line-opacity: 0.6
 
 - id: 'bikes'
   label: 'Bike Lanes'
