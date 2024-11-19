@@ -73,25 +73,24 @@
     line-width: 0.8
     line-opacity: 0.5
 
+- id: 'squirrel'
+  label: 'Squirrel Census'
+  toggle: true
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: './data/squirrel20241021.geojson'
+  paint:
+    ## this is get syntax
+    ## 'fur_color_val' must the name of the
+    ##field that contains the color values you
+    ##would like to be assigned.
+     circle-color: ['get','fur_color_val']
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "Fur color: "
+            - property: "primary_fur_color"
+              else: "N/A"
 
-    - id: 'squirrel'
-    label: 'Squirrel Census'
-    toggle: true
-    visible: false
-    data-type: 'geojson'
-    layer-type: 'circle'
-    url: './data/squirrel20241021.geojson'
-    paint:
-      ## this is get syntax
-      ## 'fur_color_val' must the name of the
-      ##field that contains the color values you
-      ##would like to be assigned.
-      circle-color: ['get','fur_color_val']
-      mouseEvent:
-        - type: "click"
-          content:
-            - p:
-                - str: "Fur color: "
-                - property: "primary_fur_color"
-                  else: "N/A"
-                  
