@@ -97,7 +97,7 @@
 - id: 'trees'
   label: '2015 Street Tree Census'
   toggle: true
-  visible: true
+  visible: false
   data-type: 'geojson'
   layer-type: 'circle'
   url: './data/2015_Street_Tree_Census_subset_um.geojson'
