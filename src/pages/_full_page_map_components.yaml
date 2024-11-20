@@ -7,7 +7,7 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
   paint:
     line-color: '#000000'  
-    line-width: 1
+    line-width: 0.4
     line-opacity: 0.4
 
 - id: accessibility-layer
@@ -33,6 +33,17 @@
         - [20, '#a50f15']
         - [23, '#67000d']
     fill-opacity: 1.0  
+
+- id: accessibility-layer
+  label: Accessibility
+  toggle: true  
+  visible: false
+  data-type: geojson
+  layer-type: fill 
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
+  paint:
+     fill-color: '#FFFFFF'  
+
 
 - id: 'elementary-school-locations'
   label: 'Elementary School Locations'
