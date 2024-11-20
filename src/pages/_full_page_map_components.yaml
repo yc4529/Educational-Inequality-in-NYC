@@ -10,6 +10,26 @@
     line-width: 0.5
     line-opacity: 0.4
 
+    
+- id: 'elementary-school-locations'
+  label: 'Elementary School Locations'
+  visible: true   
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
+  paint:
+    circle-color: '#FFA500'
+    circle-radius: 3
+    circle-opacity: 0.8
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "School Name: "
+            - property: "location_n"
+              else: "N/A"  
+
+
 - id: accessibility-layer
   label: Accessibility
   toggle: true  
@@ -33,25 +53,6 @@
         - [20, '#a50f15']
         - [23, '#67000d']
     fill-opacity: 1.0   
-
-
-- id: 'elementary-school-locations'
-  label: 'Elementary School Locations'
-  visible: true   
-  data-type: 'geojson'
-  layer-type: 'circle'
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
-  paint:
-    circle-color: '#FFA500'
-    circle-radius: 3
-    circle-opacity: 0.8
-  mouseEvent:
-    - type: "click"
-      content:
-        - p:
-            - str: "School Name: "
-            - property: "location_n"
-              else: "N/A"
 
 
 - id: 'squirrel'
