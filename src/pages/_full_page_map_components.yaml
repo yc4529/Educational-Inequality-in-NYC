@@ -32,12 +32,7 @@
         - [17, '#c5161c']
         - [20, '#a50f15']
         - [23, '#67000d']
-    fill-opacity: 1.0  
-  data-type: geojson
-  layer-type: fill 
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
-  paint:
-     fill-color: '#FFFFFF'  
+    fill-opacity: 1.0   
 
 
 - id: 'elementary-school-locations'
