@@ -1,46 +1,38 @@
-- id: 'accessibility-layer'
-  label: 'Accessibility'
-  toggle: true
+- id: accessibility-layer
+  label: Accessibility
+  toggle: true  
+  visible: false
+  data-type: geojson
+  layer-type: fill
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility.geojson'
+  paint:
+    fill-color: 
+      property: DN  
+      stops:  
+        - [0, '#FFF4E6']
+        - [2, '#FFE0B3']
+        - [4, '#FFC285']
+        - [6, '#FFA366']
+        - [8, '#FF8540']
+        - [10, '#FF6600']
+        - [12, '#E65500']
+        - [14, '#CC4400']
+        - [17, '#B33300']
+        - [20, '#992200']
+        - [23, '#800000']
+    fill-opacity: 0.8  
+
+# 다른 레이어 예시
+- id: school-zones
+  label: School Zones
   visible: true
-  layers:
-    - id: 'buffer-500m'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/500m.geojson'
-      type: 'fill'
-      paint:
-        fill-color: '#FFEDA0'  
-        fill-opacity: 0.3
-
-    - id: 'buffer-1000m'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/1000m.geojson'
-      type: 'fill'
-      paint:
-        fill-color: '#FEB24C'  
-        fill-opacity: 0.3
-
-    - id: 'buffer-1500m'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/1500m.geojson'
-      type: 'fill'
-      paint:
-        fill-color: '#F03B20'  
-        fill-opacity: 0.3
-
-    - id: 'school-zones'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
-      type: 'fill'
-      paint:
-        fill-color: '#B22222'  
-        fill-opacity: 0.4
-        line-color: '#000000'  
-        line-width: 0.8
-        line-opacity: 0.5
-
-    - id: 'school-locations'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
-      type: 'circle'
-      paint:
-        circle-color: '#FFFFFF'  
-        circle-radius: 4
-        circle-opacity: 0.8
+  data-type: geojson
+  layer-type: line
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
+  paint:
+    line-color: '#000000'
+    line-width: 0.8
+    line-opacity: 0.5
 
 
 - id: 'elementary-school-locations'
@@ -72,41 +64,6 @@
     line-color: '#000000'  
     line-width: 0.8
     line-opacity: 0.5
-
-- id: heatmap-layer
-  label: Elementary School Heatmap
-  toggle: true
-  visible: false
-  data-type: 'geojson'
-  layer-type: 'heatmap'
-  data: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
-  paint:
-    heatmap-weight:
-      - 'interpolate'
-      - ['linear']
-      - 0, 1 
-    heatmap-intensity:
-      - 'interpolate'
-      - ['linear']
-      - ['zoom']
-      - 0, 1
-      - 9, 3
-    heatmap-color:
-      - 'interpolate'
-      - ['linear']
-      - ['heatmap-density']
-      - 0, 'rgba(33,102,172,0)'    
-      - 0.2, 'rgb(103,169,207)'    
-      - 0.4, 'rgb(209,229,240)'    
-      - 0.6, 'rgb(253,219,199)'    
-      - 0.8, 'rgb(239,138,98)'     
-      - 1, 'rgb(178,24,43)'        
-    heatmap-radius:
-      - 'interpolate'
-      - ['linear']
-      - ['zoom']
-      - 0, 2  
-      - 9, 20 
 
 
 - id: 'squirrel'
