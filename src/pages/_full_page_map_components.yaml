@@ -1,39 +1,3 @@
-- id: accessibility-group
-  label: Accessibility
-  toggle: true  
-  visible: false
-  layers:
-    - id: accessibility-layer
-      label: Accessibility
-      data-type: geojson
-      layer-type: fill
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility.geojson'
-      paint:
-        fill-color: 
-          property: DN  
-          stops:  
-            - [0, '#FFF4E6']
-            - [2, '#FFE0B3']
-            - [4, '#FFC285']
-            - [6, '#FFA366']
-            - [8, '#FF8540']
-            - [10, '#FF6600']
-            - [12, '#E65500']
-            - [14, '#CC4400']
-            - [17, '#B33300']
-            - [20, '#992200']
-            - [23, '#800000']
-        fill-opacity: 1.0
-
-    - id: school-zones
-      label: School Zones
-      data-type: geojson
-      layer-type: line
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
-      paint:
-        line-color: '#000000'
-        line-width: 0.6
-        line-opacity: 0.5
 
 
 
@@ -45,9 +9,32 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
   paint:
     line-color: '#000000'
-    line-width: 0.6
-    line-opacity: 0.5
+    line-width: 0.4
+    line-opacity: 0.4
 
+- id: accessibility-layer
+  label: Accessibility
+  toggle: true  
+  visible: false
+  data-type: geojson
+  layer-type: fill
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility.geojson'
+  paint:
+    fill-color: 
+      property: DN  
+      stops:  
+        - [0, '#FFF4E6']
+        - [2, '#FFE0B3']
+        - [4, '#FFC285']
+        - [6, '#FFA366']
+        - [8, '#FF8540']
+        - [10, '#FF6600']
+        - [12, '#E65500']
+        - [14, '#CC4400']
+        - [17, '#B33300']
+        - [20, '#992200']
+        - [23, '#800000']
+    fill-opacity: 1.0  
 
 - id: 'elementary-school-locations'
   label: 'Elementary School Locations'
