@@ -1,32 +1,116 @@
-- id: 'bikes'
-  label: 'Bike Lanes'
+- id: 'elementary-school-zones'
+  label: 'Elementary School Zones'
+  visible: true  
+  data-type: 'geojson'
+  layer-type: 'line'  
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
+  paint:
+    line-color: '#000000'  
+    line-width: 0.5
+    line-opacity: 0.3
+
+    
+- id: accessibility-layer
+  label: Accessibility
   toggle: true  
   visible: false
-  data-type: 'geojson'
-  layer-type: 'line'
-  url: 'https://data.cityofnewyork.us/resource/mzxg-pwib.geojson?$limit=10000'
+  data-type: geojson
+  layer-type: fill
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility.geojson'
   paint:
-    line-color: '#000000'
-    line-width: 3
+    fill-color: 
+      property: DN  
+      stops:  
+        - [0, '#fff5f0']
+        - [2, '#fee5d9']
+        - [4, '#fdccb8']
+        - [6, '#fcae93']
+        - [8, '#fc8f6f']
+        - [10, '#fb7050']
+        - [12, '#f44d38']
+        - [14, '#e12e26']
+        - [17, '#c5161c']
+        - [20, '#a50f15']
+        - [23, '#67000d']
+    fill-opacity: 1.0   
 
-- id: 'pizza'
-  label: 'Pizza Places'
-  toggle: true
-  visible: true
+- id: 'elementary-school-zones'
+  label: 'Elementary School Zones'
+  visible: true  
+  data-type: 'geojson'
+  layer-type: 'line'  
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
+  paint:
+    line-color: '#000000'  
+    line-width: 0.5
+    line-opacity: 0.2
+
+
+- id: 'elementary-school-locations'
+  label: 'Elementary School Locations'
+  visible: true   
   data-type: 'geojson'
   layer-type: 'circle'
-  url: 'https://data.cityofnewyork.us/resource/43nn-pn8j.geojson?cuisine_description=Pizza&$limit=10000'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson'
   paint:
-    circle-color: '#ff0000'
-    circle-radius: 5
+    circle-color: '#FFA500'
+    circle-radius: 3
+    circle-opacity: 0.8
   mouseEvent:
     - type: "click"
       content:
-        - h1:
-            - str: "Feature Info"
         - p:
-            - str: "Description"
+            - str: "School Name: "
+            - property: "location_n"
+              else: "N/A"  
+
+
+- id: 'squirrel'
+  label: 'Squirrel Census'
+  toggle: true
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: './data/squirrel20241021.geojson'
+  paint:
+    ## this is get syntax
+    ## 'fur_color_val' must the name of the
+    ##field that contains the color values you
+    ##would like to be assigned.
+     circle-color: ['get','fur_color_val']
+  mouseEvent:
+    - type: "click"
+      content:
         - p:
-            - str: "Name: "
-            - property: "dba"
+            - str: "Fur color: "
+            - property: "primary_fur_color"
               else: "N/A"
+
+- id: 'trees'
+  label: '2015 Street Tree Census'
+  toggle: true
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: './data/2015_Street_Tree_Census_subset_um.geojson'
+  paint:
+    circle-color: [
+      'step',
+      ['get','tree_dbh'],
+      '#5ef787', ##color for all values < first value
+      3, '#4ecf71', ##value, color,
+      8, '#3a9c54',
+      12, '#286b3a',
+      15, '#173d21',
+      25, '#1b3622',
+      ]
+    circle-radius: [
+      'step',
+      ['get','tree_dbh'],
+      .5, ## size for all values < first value
+      3, 1, ##value, size,
+      8, 2,
+      12, 3,
+      15, 4,
+      25, 5,
+      ]
