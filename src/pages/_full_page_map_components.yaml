@@ -6,9 +6,9 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson'
   paint:
     line-color: '#000000'  
-    line-width: 0.5
-    line-opacity: 0.3
-
+    line-width: 0.7
+    line-opacity: 0.4
+ 
     
 - id: accessibility-layer
   label: Accessibility
