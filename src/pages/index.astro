@@ -7,44 +7,39 @@ import { HOME } from "@consts";
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
-      Boilerplate Astro website for presenting spatial narratives <span
-        class="text-xl">🗺️</span
-      >
+      Analysis of New York City’s Educational Environment: Accessibility, Performance, and Safety
     </h4>
+    
     <div class="space-y-16">
       <h2 class="font-semibold text-black dark:text-white">About</h2>
       <p>
-        This is a boilerplate Astro website for presenting spatial narratives.
-        It is built with Astro, Tailwind CSS, and MapLibre GL JS. It is designed
-        to be a starting point for creating a website that tells a story with
-        maps.
+        This website is designed to provide a clearer understanding of the educational environment in New York City 
+        and visualize regional disparities in education. Although education should offer equal opportunities for all, 
+        significant differences exist between regions. This project analyzes three key aspects—
+        <b>educational facility accessibility</b>, <b>academic performance</b>, and <b>safety</b>—to highlight these inequalities.
       </p>
       <p>
-        The <b>pages/inline_maps.mdx</b> page (available at <a
-          href="/astro-maplibre-template/inline_maps">/inline_maps</a
-        >) demonstrates how to create a page with interactive mapstyle that is
-        embedded directly in the page, interspersed with text and images. The
-        `full_page_map.mdx` page (available at <a
-          href="/astro-maplibre-template/full_page_map">/full_page_maps</a
-        >) demonstrates how to create a full page map.
+        <b>Educational Facility Accessibility</b>: Visualizing the density of schools by school zones to analyze how 
+        easily students can access educational facilities in different areas.
       </p>
       <p>
-        The <b>scrollytelling.mdx</b> page (available at <a
-          href="/astro-maplibre-template/scrollytelling">/scrollytelling</a
-        >) and <b>pages/_scrollytelling_steps.yaml</b> file demonstrate how to create
-        a scrollytelling narrative website.
+        <b>Academic Performance</b>: Using standardized test scores to compare academic outcomes across regions and 
+        provide specific data on the quality of education.
       </p>
       <p>
-        The <b>pages/full_page_map.mdx</b> page (available at <a
-          href="/astro-maplibre-template/full_page_map">/full_page_maps</a
-        >) demonstrates how to create a full page map and toggle layers on and
-        off.
+        <b>Safety</b>: Showing the safety levels of different areas based on crime data around schools, helping students 
+        and parents make informed decisions when choosing schools.
       </p>
       <p>
-        For all types of websites, you can use <a
-          href="https://labs.mapbox.com/location-helper/">this mapbox website</a
-        > to help you position your map.
+        All data is visualized separately for <b>elementary schools</b> 
+        (<a href="/astro-maplibre-template/full_page_maps">full_page_maps</a>), 
+        middle schools, and high schools, allowing for detailed analysis of disparities at each educational stage.
+      </p>
+      <p>
+        This project serves as a resource for New York City residents to consider when choosing where to live, and provides 
+        policymakers with data-driven insights to ensure the fair distribution of educational resources.
       </p>
     </div>
   </Container>
 </PageLayout>
+
