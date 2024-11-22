@@ -34,6 +34,34 @@
         - [23, '#67000d']
     fill-opacity: 1.0   
 
+
+- id: performance
+  label: Performance
+  toggle: true
+  visible: false  
+  data-type: geojson
+  layer-type: fill
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Performance.geojson'
+  paint:
+    fill-color:
+      property: Average Student Proficiency (Overall)
+      stops:
+        - [0.0000, '#e0f3db']
+        - [2.4700, '#a8ddb5']
+        - [2.8600, '#7bccc4']
+        - [3.2900, '#43a2ca']
+        - [4.0600, '#0868ac']
+    fill-opacity: 1
+  legend:
+    format: '%1 - %2'
+    breaks:
+      - [0.0000, 2.4700, '#e0f3db']
+      - [2.4700, 2.8600, '#a8ddb5']
+      - [2.8600, 3.2900, '#7bccc4']
+      - [3.2900, 4.0600, '#43a2ca']
+      - [4.0600, 4.0600, '#0868ac']
+
+     
 - id: 'elementary-school-zones'
   label: 'Elementary School Zones'
   visible: true  
