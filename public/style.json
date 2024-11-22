@@ -58,7 +58,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -77,7 +77,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9",
+        "fill-color": "#E6E9E5",
         "fill-opacity": 0.7
       }
     },
@@ -95,7 +95,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -112,7 +112,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -131,7 +131,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -148,7 +148,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -165,7 +165,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -184,7 +184,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -203,7 +203,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -219,7 +219,7 @@
         "grass"
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -233,7 +233,7 @@
         "glacier"
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -247,7 +247,7 @@
         "sand"
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -264,7 +264,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -340,7 +340,7 @@
       "source": "protomaps",
       "source-layer": "water",
       "paint": {
-        "fill-color": "#a8c0cc"
+        "fill-color": "#c2c8ca"
       }
     },
     {
@@ -410,7 +410,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
@@ -427,7 +427,7 @@
         ]
       ],
       "paint": {
-        "fill-color": "#d0e6d9"
+        "fill-color": "#E6E9E5"
       }
     },
     {
