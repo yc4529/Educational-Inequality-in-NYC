@@ -1,5 +1,6 @@
 - id: 'elementary-school-zones'
   label: 'Elementary School Zones'
+  toggle: true
   visible: true  
   data-type: 'geojson'
   layer-type: 'line'  
