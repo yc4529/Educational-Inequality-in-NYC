@@ -1,0 +1,115 @@
+<!DOCTYPE html><p>/* import all images you would like to use in line here */</p>
+
+<html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg"><meta name="generator" content="Astro v4.16.14"><!-- Font preloads --><link rel="preload" href="/astro-maplibre-template/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/astro-maplibre-template/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/astro-maplibre-template/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/astro-maplibre-template/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://yc4529.github.io/astro-maplibre-template/inline_maps/"><!-- Primary Meta Tags --><title>undefined | Project Website</title><meta name="title" content="undefined | Project Website"><meta name="description"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://yc4529.github.io/astro-maplibre-template/inline_maps/"><meta property="og:title" content="undefined | Project Website"><meta property="og:description"><meta property="og:image" content="https://yc4529.github.io/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://yc4529.github.io/astro-maplibre-template/inline_maps/"><meta property="twitter:title" content="undefined | Project Website"><meta property="twitter:description"><meta property="twitter:image" content="https://yc4529.github.io/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><script data-astro-rerun src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script><link rel="stylesheet" href="/astro-maplibre-template/_astro/full_page_map.Wt8sg7xW.css"><script type="module" src="/astro-maplibre-template/_astro/hoisted.Buo6ffPp.js"></script></head> <body> <header> <div class="mx-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs px-2">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/astro-maplibre-template" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Project Website </div>  </a> </div>  </div> </header> <main> <div class="mx-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs px-2"> <h1 id="my-project">My Project</h1><p>An example of an interactive map</p><maplibre-map-inline data-latitude="40.8075803" data-longitude="-73.9604192" data-zoom="12" data-mapstyle="https://api.maptiler.com/maps/dataviz/style.json?key=WlatIY6MghFCwInJhBkl" data-container="maplibremap" data-interactive="true" data-containerstyle="width: 100%; height: 50vh" data-layers="[{&#34;url&#34;:&#34;https://data.cityofnewyork.us/resource/43nn-pn8j.geojson?cuisine_description=Pizza&#38;$limit=10000&#34;,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;circle&#34;,&#34;id&#34;:&#34;pizza&#34;,&#34;paint&#34;:{&#34;circle-color&#34;:&#34;#ff0000&#34;,&#34;circle-radius&#34;:5},&#34;mouseEvent&#34;:[{&#34;type&#34;:&#34;click&#34;,&#34;content&#34;:[{&#34;h2&#34;:[{&#34;str&#34;:&#34;Feature Info&#34;}]},{&#34;p&#34;:[{&#34;str&#34;:&#34;Description of feature&#34;}]},{&#34;p&#34;:[{&#34;str&#34;:&#34;NTA Attribute: &#34;},{&#34;property&#34;:&#34;dba&#34;,&#34;else&#34;:&#34;N/A&#34;},{&#34;str&#34;:&#34; in CD &#34;},{&#34;property&#34;:&#34;nta&#34;,&#34;else&#34;:&#34;N/A&#34;}]},{&#34;a&#34;:[{&#34;href&#34;:&#34;https://example.com&#34;,&#34;text&#34;:&#34;Learn more about this feature&#34;}]},{&#34;img&#34;:[{&#34;src&#34;:&#34;https://www.seriouseats.com/thmb/-_mziT2tl0F63I4kfji4S6bE-cA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__10__20181015-state-of-slice-delmar-clay-williams-2de043fa5a0d4475b6c567e4a974b13b.jpg&#34;,&#34;alt&#34;:&#34;Feature image&#34;}]}]}]},{&#34;url&#34;:&#34;https://data.cityofnewyork.us/resource/mzxg-pwib.geojson?$limit=10000&#34;,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;line&#34;,&#34;id&#34;:&#34;bikes&#34;,&#34;paint&#34;:{&#34;line-color&#34;:&#34;#000000&#34;,&#34;line-width&#34;:3}}]"> <div id="maplibremap" style="width: 100%; height: 50vh" class="maplibre-inline"></div> <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">  </maplibre-map-inline><p>… and a static map. Note that the container ID must be unique.</p><maplibre-map-inline data-latitude="32.795595" data-longitude="-117.259191" data-zoom="3" data-mapstyle="https://demotiles.maplibre.org/style.json" data-container="maplibremap2" data-interactive="false" data-containerstyle="width: 100%; height: 256px"> <div id="maplibremap2" style="width: 100%; height: 256px" class="maplibre-inline"></div> <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">  </maplibre-map-inline><p>… and a static map from an image you have composed</p><p>/* To add static images from a jpg or png file use the syntax below*/
+/* you must include the reference name that corresponds to the file path you have listed above */</p><img src="/astro-maplibre-template/_astro/fisk02.C5KFiqlJ.jpg" alt="image description"/><h2 id="a-subsection">A subsection</h2><p>You can go into more detail here.</p><h3 id="a-further-subsection">A further subsection</h3><p>And even more detail here.</p> </div> </main> <footer class="animate"> <div class="mx-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs px-2">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2024 | Project Website </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yc4529.github.io/sitemap-index.xml
