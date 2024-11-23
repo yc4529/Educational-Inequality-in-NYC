@@ -28,28 +28,12 @@ jobs:
           # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
   deploy:
-  needs: build
-  runs-on: ubuntu-latest
-  environment:
-    name: github-pages
-    url: ${{ steps.deployment.outputs.page_url }}
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build with increased memory
-      env:
-        NODE_OPTIONS: --max-old-space-size=4096
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
