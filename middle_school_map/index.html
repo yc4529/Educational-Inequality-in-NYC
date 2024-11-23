@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg"><meta name="generator" content="Astro v4.16.14"><!-- Font preloads --><link rel="preload" href="/astro-maplibre-template/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/astro-maplibre-template/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/astro-maplibre-template/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/astro-maplibre-template/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://yc4529.github.io/astro-maplibre-template/middle_school_map/"><!-- Primary Meta Tags --><title>Middle School Map | Project Website</title><meta name="title" content="Middle School Map | Project Website"><meta name="description"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://yc4529.github.io/astro-maplibre-template/middle_school_map/"><meta property="og:title" content="Middle School Map | Project Website"><meta property="og:description"><meta property="og:image" content="https://yc4529.github.io/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://yc4529.github.io/astro-maplibre-template/middle_school_map/"><meta property="twitter:title" content="Middle School Map | Project Website"><meta property="twitter:description"><meta property="twitter:image" content="https://yc4529.github.io/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><script data-astro-rerun src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script><link rel="stylesheet" href="/astro-maplibre-template/_astro/full_page_map.Wt8sg7xW.css"><script type="module" src="/astro-maplibre-template/_astro/hoisted.JS9IrGJ2.js"></script></head> <body> <header> <div class="mx-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs px-2">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/astro-maplibre-template" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Project Website </div>  </a> </div>  </div> </header> <main> <div class="full-page-map-container"> <!-- Map Container --> <div id="maplibre-full-map" class="maplibre-inline map-container" style="width:100vw;height:100vh"> <nav id="menu"></nav> <maplibre-fullpage-map data-latitude="40.8075803" data-longitude="-73.9604192" data-zoom="12" data-mapstyle="./style.json" data-container="maplibre-full-map" data-interactive="true" data-containerstyle="width: 100%; height: 50vh" data-layers="[{&#34;id&#34;:&#34;elementary-school-zones&#34;,&#34;label&#34;:&#34;Elementary School Zones&#34;,&#34;toggle&#34;:true,&#34;visible&#34;:true,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;line&#34;,&#34;url&#34;:&#34;https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Zones.geojson&#34;,&#34;paint&#34;:{&#34;line-color&#34;:&#34;#000000&#34;,&#34;line-width&#34;:0.6,&#34;line-opacity&#34;:0.4}},{&#34;id&#34;:&#34;accessibility-layer&#34;,&#34;label&#34;:&#34;Accessibility&#34;,&#34;toggle&#34;:true,&#34;visible&#34;:false,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;fill&#34;,&#34;url&#34;:&#34;https://yc4529.github.io/astro-maplibre-template/data/Accessibility.geojson&#34;,&#34;paint&#34;:{&#34;fill-color&#34;:{&#34;property&#34;:&#34;DN&#34;,&#34;stops&#34;:[[0,&#34;#fff5f0&#34;],[2,&#34;#fee5d9&#34;],[4,&#34;#fdccb8&#34;],[6,&#34;#fcae93&#34;],[8,&#34;#fc8f6f&#34;],[10,&#34;#fb7050&#34;],[12,&#34;#f44d38&#34;],[14,&#34;#e12e26&#34;],[17,&#34;#c5161c&#34;],[20,&#34;#a50f15&#34;],[23,&#34;#67000d&#34;]]},&#34;fill-opacity&#34;:1}},{&#34;id&#34;:&#34;performance&#34;,&#34;label&#34;:&#34;Performance&#34;,&#34;toggle&#34;:true,&#34;visible&#34;:false,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;fill&#34;,&#34;url&#34;:&#34;https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Performance.geojson&#34;,&#34;paint&#34;:{&#34;fill-color&#34;:{&#34;property&#34;:&#34;Average Student Proficiency (Overall)&#34;,&#34;stops&#34;:[[0,&#34;#f7fbff&#34;],[2.47,&#34;#c8dcf0&#34;],[2.86,&#34;#73b2d8&#34;],[3.29,&#34;#2979b9&#34;],[4.06,&#34;#08306b&#34;]]},&#34;fill-opacity&#34;:1}},{&#34;id&#34;:&#34;elementary-school-locations&#34;,&#34;label&#34;:&#34;Elementary School Locations&#34;,&#34;visible&#34;:true,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;circle&#34;,&#34;url&#34;:&#34;https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Locations.geojson&#34;,&#34;paint&#34;:{&#34;circle-color&#34;:&#34;#FFA500&#34;,&#34;circle-radius&#34;:3,&#34;circle-opacity&#34;:0.8},&#34;mouseEvent&#34;:[{&#34;type&#34;:&#34;click&#34;,&#34;content&#34;:[{&#34;p&#34;:[{&#34;str&#34;:&#34;School Name: &#34;},{&#34;property&#34;:&#34;location_n&#34;,&#34;else&#34;:&#34;N/A&#34;}]}]}]},{&#34;id&#34;:&#34;squirrel&#34;,&#34;label&#34;:&#34;Squirrel Census&#34;,&#34;toggle&#34;:true,&#34;visible&#34;:false,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;circle&#34;,&#34;url&#34;:&#34;./data/squirrel20241021.geojson&#34;,&#34;paint&#34;:{&#34;circle-color&#34;:[&#34;get&#34;,&#34;fur_color_val&#34;]},&#34;mouseEvent&#34;:[{&#34;type&#34;:&#34;click&#34;,&#34;content&#34;:[{&#34;p&#34;:[{&#34;str&#34;:&#34;Fur color: &#34;},{&#34;property&#34;:&#34;primary_fur_color&#34;,&#34;else&#34;:&#34;N/A&#34;}]}]}]},{&#34;id&#34;:&#34;trees&#34;,&#34;label&#34;:&#34;2015 Street Tree Census&#34;,&#34;toggle&#34;:true,&#34;visible&#34;:false,&#34;data-type&#34;:&#34;geojson&#34;,&#34;layer-type&#34;:&#34;circle&#34;,&#34;url&#34;:&#34;./data/2015_Street_Tree_Census_subset_um.geojson&#34;,&#34;paint&#34;:{&#34;circle-color&#34;:[&#34;step&#34;,[&#34;get&#34;,&#34;tree_dbh&#34;],&#34;#5ef787&#34;,3,&#34;#4ecf71&#34;,8,&#34;#3a9c54&#34;,12,&#34;#286b3a&#34;,15,&#34;#173d21&#34;,25,&#34;#1b3622&#34;],&#34;circle-radius&#34;:[&#34;step&#34;,[&#34;get&#34;,&#34;tree_dbh&#34;],0.5,3,1,8,2,12,3,15,4,25,5]}}]"> <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">  </maplibre-fullpage-map> </div> </div> </main> <footer class="animate"> <div class="mx-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm xs:max-w-screen-xs px-2">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2024 | Project Website </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>
