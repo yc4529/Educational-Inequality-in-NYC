@@ -9,7 +9,6 @@
     line-color: '#000000'  
     line-width: 0.6
     line-opacity: 0.4
-    priority: high
     
 - id: accessibility-layer
   label: Accessibility
