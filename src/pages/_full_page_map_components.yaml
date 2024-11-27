@@ -73,34 +73,38 @@
             - property: "location_n"
               else: "N/A"  
 
-- id: 'elementary-school-safety'
+- id: 'elementary-school-safety-fill'
   label: 'Safety'
   toggle: true
   visible: false
   data-type: 'geojson'
-  layer-type: 'combined'
-  layers:
-    - type: 'fill'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/Safety_Elementary_School.geojson'
-      paint:
-        fill-color:
-          property: NUMPOINTS
-          stops:
-            - [0, '#fff5f0']
-            - [43, '#fee5d9']
-            - [94, '#fdccb8']
-            - [141, '#fcae93']
-            - [191, '#fc8f6f']
-            - [258, '#fb7050']
-            - [366, '#f44d38']
-            - [538, '#e12e26']
-            - [1050, '#c5161c']
-            - [2132, '#a50f15']
-        fill-opacity: 1.0
+  layer-type: 'fill'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Safety_Elementary_School.geojson'
+  paint:
+    fill-color:
+      property: NUMPOINTS
+      stops:
+        - [0, '#fff5f0']
+        - [43, '#fee5d9']
+        - [94, '#fdccb8']
+        - [141, '#fcae93']
+        - [191, '#fc8f6f']
+        - [258, '#fb7050']
+        - [366, '#f44d38']
+        - [538, '#e12e26']
+        - [1050, '#c5161c']
+        - [2132, '#a50f15']
+    fill-opacity: 1.0
 
-    - type: 'circle'
-      url: 'https://yc4529.github.io/astro-maplibre-template/data/NYPD_Data.geojson'
-      paint:
-        circle-color: '#FFA500'
-        circle-radius: 3
-        circle-opacity: 0.8
+- id: 'elementary-school-safety-points'
+  label: 'Safety'
+  toggle: true
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/NYPD_Data.geojson'
+  paint:
+    circle-color: '#FFA500'
+    circle-radius: 3
+    circle-opacity: 0.8
+
