@@ -144,21 +144,33 @@ const {
                       toggleButton.className = "active";
                     }
                     toggleButton.onclick = () => {
-                      if (
-                        map.getLayoutProperty(layer.id, "visibility") ===
-                        "visible"
-                      ) {
-                        map.setLayoutProperty(layer.id, "visibility", "none");
-                        toggleButton.className = "";
-                      } else {
-                        map.setLayoutProperty(
-                          layer.id,
-                          "visibility",
-                          "visible"
-                        );
-                        toggleButton.className = "active";
-                      }
-                    };
+          if (map.getLayoutProperty(layer.id, "visibility") === "visible") {
+            map.setLayoutProperty(layer.id, "visibility", "none");
+            toggleButton.className = "";
+
+            // 특정 레이어가 꺼질 때 관련된 다른 레이어도 끔
+            if (layer.id === "safety-fill-layer") {
+              map.setLayoutProperty("nypd-point-layer", "visibility", "none");
+              const relatedLayerButton = document.querySelector("[data-layer='nypd-point-layer']");
+              if (relatedLayerButton) {
+                relatedLayerButton.className = "";
+              }
+            }
+          } else {
+            map.setLayoutProperty(layer.id, "visibility", "visible");
+            toggleButton.className = "active";
+
+            // 특정 레이어가 켜질 때 관련된 다른 레이어도 켬
+            if (layer.id === "safety-fill-layer") {
+              map.setLayoutProperty("nypd-point-layer", "visibility", "visible");
+              const relatedLayerButton = document.querySelector("[data-layer='nypd-point-layer']");
+              if (relatedLayerButton) {
+                relatedLayerButton.className = "active";
+              }
+            }
+          }
+        };
+                    
                     if (menu) {
                       menu.appendChild(toggleButton);
                     }
