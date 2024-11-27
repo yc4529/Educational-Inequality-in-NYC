@@ -126,7 +126,7 @@
   url: 'https://yc4529.github.io/astro-maplibre-template/data/NYPD_Point_Layer.geojson'
   paint:
     circle-color: '#c30d37'
-    circle-radius: 1.2
-    circle-opacity: 0.3
+    circle-radius: 1.0
+    circle-opacity: 0.2
 
 
