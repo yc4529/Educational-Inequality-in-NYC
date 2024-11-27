@@ -75,6 +75,7 @@
 
 - id: 'elementary-school-safety-fill'
   label: 'Safety'
+  group: 'elementary-school-safety'
   toggle: true
   visible: false
   data-type: 'geojson'
@@ -98,6 +99,7 @@
 
 - id: 'elementary-school-safety-points'
   label: 'Safety'
+  group: 'elementary-school-safety'
   toggle: true
   visible: false
   data-type: 'geojson'
