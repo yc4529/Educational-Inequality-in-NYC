@@ -74,12 +74,12 @@
               else: "N/A"  
 
 - id: 'safety-fill-layer'
-  label: 'Safety Fill Layer'
+  label: 'Safety'
   toggle: true
   visible: false
   data-type: 'geojson'
   layer-type: 'fill'
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Safety_Fill_Layer.geojson'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Safety_Elementary_School.geojson'
   paint:
     fill-color:
       property: NUMPOINTS
