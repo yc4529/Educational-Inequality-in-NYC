@@ -52,7 +52,21 @@
         - [3.2900, '#2979b9']
         - [4.0600, '#08306b']
     fill-opacity: 1
-
+  mouseEvent:
+    - type: "mousemove"
+      content:
+        - p:
+            - str: "Average Student Proficiency ELA: "
+            - property: "Average Student Proficiency ELA"
+              else: "N/A"
+        - p:
+            - str: "Average Student Proficiency Math: "
+            - property: "Average Student Proficiency Math"
+              else: "N/A"
+        - p:
+            - str: "Average Student Proficiency Overall: "
+            - property: "Average Student Proficiency (Overall)"
+              else: "N/A"
 
 
 - id: 'elementary-school-locations'
@@ -84,12 +98,24 @@
     fill-color:
       property: NUMPOINTS
       stops:
-        - [0, '#fff5f0']
-        - [43, '#fee5d9']
-        - [94, '#fdccb8']
-        - [141, '#fcae93']
-        - [191, '#fc8f6f']
+        - [0, '#f5fcf8']
+        - [43, '#e8f6e3']
+        - [94, '#d0ecc9']
+        - [141, '#b2e0ab']
+        - [191, '#8ed08c']
+        - [258, '#66bd6f']
+        - [366, '#3da75a']
+        - [538, '#248c45']
+        - [1050, '#03702e']
+        - [2132, '#00441b']
     fill-opacity: 1.0
+  mouseEvent:
+    - type: "mousemove"
+      content:
+        - p:
+            - str: "Crime Report Count"
+            - property: "NUMPOINTS"
+              else: "N/A"
 
 - id: 'nypd-point-layer'
   label: 'NYPD Point Layer'
@@ -99,8 +125,8 @@
   layer-type: 'circle'
   url: 'https://yc4529.github.io/astro-maplibre-template/data/NYPD_Point_Layer.geojson'
   paint:
-    circle-color: '#FFA500'
-    circle-radius: 3
-    circle-opacity: 0.8
+    circle-color: '#561689'
+    circle-radius: 1
+    circle-opacity: 0.7
 
 
