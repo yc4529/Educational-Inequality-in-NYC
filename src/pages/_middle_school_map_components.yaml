@@ -72,3 +72,45 @@
             - str: "School Name: "
             - property: "location_n"
               else: "N/A"  
+
+- id: 'safety-fill-layer-middle'
+  label: 'Safety'
+  toggle: true
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'fill'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Safety_Middle_School.geojson'
+  paint:
+    fill-color:
+      property: NUMPOINTS
+      stops:
+        - [141, '#f5fcf8']
+        - [330, '#e8f6e3']
+        - [529, '#d0ecc9']
+        - [780, '#b2e0ab']
+        - [1184, '#8ed08c']
+        - [1662, '#66bd6f']
+        - [2446, '#3da75a']
+        - [3013, '#248c45']
+        - [4077, '#03702e']
+        - [6118, '#00441b']
+    fill-opacity: 1.0
+  mouseEvent:
+    - type: "mousemove"
+      content:
+        - p:
+            - str: "Crime Report Count"
+            - property: "NUMPOINTS"
+              else: "N/A"
+
+- id: 'nypd-point-layer'
+  label: 'NYPD Point Layer'
+  toggle: false
+  visible: false
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/NYPD_Point_Layer.geojson'
+  paint:
+    circle-color: '#c30d37'
+    circle-radius: 1.1
+    circle-opacity: 0.2
