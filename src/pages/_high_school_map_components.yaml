@@ -55,23 +55,38 @@
 
 
 
-- id: 'high-school-locations'
-  label: 'High School Locations'
-  visible: true   
-  data-type: 'geojson'
-  layer-type: 'circle'
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/High-School-Locations.geojson'
+- id: performance
+  label: Performance
+  toggle: true
+  visible: false  
+  data-type: geojson
+  layer-type: fill
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/High-School-Performance.geojson'
   paint:
-    circle-color: '#FFA500'
-    circle-radius: 3
-    circle-opacity: 0.8
+    fill-color:
+      property: Average Score
+      stops:
+        - [0.0000, '#f7fbff']
+        - [433.00, '#c8dcf0']
+        - [492.00, '#73b2d8']
+        - [592.00, '#2979b9']
+        - [754.00, '#08306b']
+    fill-opacity: 1
   mouseEvent:
-    - type: "click"
+    - type: "mousemove"
       content:
         - p:
-            - str: "School Name: "
-            - property: "location_n"
-              else: "N/A"  
+            - str: "Average SAT Writing Score: "
+            - property: "Writing Score"
+              else: "N/A"
+        - p:
+            - str: "Average SAT Math Score: "
+            - property: "Math Score"
+              else: "N/A"
+        - p:
+            - str: "Average SAT Score Overall: "
+            - property: "Average Score"
+              else: "N/A"
 
 - id: 'safety-fill-layer-high'
   label: 'Safety'
