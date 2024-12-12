@@ -149,7 +149,7 @@ const {
             toggleButton.className = "";
 
             // 특정 레이어가 꺼질 때 관련된 다른 레이어도 끔
-            if (layer.id === "safety-fill-layer") {
+            if (layer.id === "safety-fill-layer-middle") {
               map.setLayoutProperty("nypd-point-layer", "visibility", "none");
               const relatedLayerButton = document.querySelector("[data-layer='nypd-point-layer']");
               if (relatedLayerButton) {
@@ -161,7 +161,7 @@ const {
             toggleButton.className = "active";
 
             // 특정 레이어가 켜질 때 관련된 다른 레이어도 켬
-            if (layer.id === "safety-fill-layer") {
+            if (layer.id === "safety-fill-layer-middle") {
               map.setLayoutProperty("nypd-point-layer", "visibility", "visible");
               const relatedLayerButton = document.querySelector("[data-layer='nypd-point-layer']");
               if (relatedLayerButton) {
