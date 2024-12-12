@@ -41,18 +41,32 @@
   visible: false  
   data-type: geojson
   layer-type: fill
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Performance.geojson'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Middle-School-Performance.geojson'
   paint:
     fill-color:
-      property: Average Student Proficiency (Overall)
+      property: Average Score
       stops:
         - [0.0000, '#f7fbff']
-        - [2.4700, '#c8dcf0']
-        - [2.8600, '#73b2d8']
-        - [3.2900, '#2979b9']
-        - [4.0600, '#08306b']
+        - [2.4300, '#c8dcf0']
+        - [2.8100, '#73b2d8']
+        - [3.2800, '#2979b9']
+        - [4.0400, '#08306b']
     fill-opacity: 1
-
+  mouseEvent:
+    - type: "mousemove"
+      content:
+        - p:
+            - str: "Average Student Proficiency ELA: "
+            - property: "ELA Score"
+              else: "N/A"
+        - p:
+            - str: "Average Student Proficiency Math: "
+            - property: "Math Score"
+              else: "N/A"
+        - p:
+            - str: "Average Student Proficiency Overall: "
+            - property: "Average Score"
+              else: "N/A"
 
 
 - id: 'middle-school-locations'
