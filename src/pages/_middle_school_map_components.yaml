@@ -103,8 +103,8 @@
             - property: "NUMPOINTS"
               else: "N/A"
 
-- id: 'nypd-point-layer'
-  label: 'NYPD Point Layer'
+- id: 'nypd-point-layer-middle'
+  label: 'NYPD Point Layer Middle'
   toggle: false
   visible: false
   data-type: 'geojson'
