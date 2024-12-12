@@ -10,28 +10,28 @@
     line-width: 0.6
     line-opacity: 0.4
     
-- id: accessibility-layer
+- id: accessibility-layer-High
   label: Accessibility
   toggle: true  
   visible: false
   data-type: geojson
   layer-type: fill
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility.geojson'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility-High.geojson'
   paint:
     fill-color: 
       property: DN  
       stops:  
-        - [0, '#fff5f0']
-        - [2, '#fee5d9']
-        - [4, '#fdccb8']
-        - [6, '#fcae93']
-        - [8, '#fc8f6f']
-        - [10, '#fb7050']
-        - [12, '#f44d38']
-        - [14, '#e12e26']
-        - [17, '#c5161c']
-        - [20, '#a50f15']
-        - [23, '#67000d']
+        - [4, '#fff5f0']
+        - [9, '#fee5d9']
+        - [15, '#fdccb8']
+        - [21, '#fcae93']
+        - [26, '#fc8f6f']
+        - [31, '#fb7050']
+        - [37, '#f44d38']
+        - [43, '#e12e26']
+        - [49, '#c5161c']
+        - [56, '#a50f15']
+        - [63, '#67000d']
     fill-opacity: 1.0   
 
 
