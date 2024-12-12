@@ -41,26 +41,6 @@
   visible: false  
   data-type: geojson
   layer-type: fill
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Elementary-School-Performance.geojson'
-  paint:
-    fill-color:
-      property: Average Student Proficiency (Overall)
-      stops:
-        - [0.0000, '#f7fbff']
-        - [2.4700, '#c8dcf0']
-        - [2.8600, '#73b2d8']
-        - [3.2900, '#2979b9']
-        - [4.0600, '#08306b']
-    fill-opacity: 1
-
-
-
-- id: performance
-  label: Performance
-  toggle: true
-  visible: false  
-  data-type: geojson
-  layer-type: fill
   url: 'https://yc4529.github.io/astro-maplibre-template/data/High-School-Performance.geojson'
   paint:
     fill-color:
@@ -87,6 +67,25 @@
             - str: "Average SAT Score Overall: "
             - property: "Average Score"
               else: "N/A"
+
+- id: 'high-school-locations'
+  label: 'High School Locations'
+  visible: true   
+  data-type: 'geojson'
+  layer-type: 'circle'
+  url: 'https://yc4529.github.io/astro-maplibre-template/data/High-School-Locations.geojson'
+  paint:
+    circle-color: '#FFA500'
+    circle-radius: 3
+    circle-opacity: 0.8
+  mouseEvent:
+    - type: "click"
+      content:
+        - p:
+            - str: "School Name: "
+            - property: "location_n"
+              else: "N/A"  
+
 
 - id: 'safety-fill-layer-high'
   label: 'Safety'
