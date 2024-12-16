@@ -4,7 +4,7 @@
   visible: true  
   data-type: 'geojson'
   layer-type: 'line'  
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Middle-School-Zones.geojson'
+  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Middle-School-Zones.geojson'
   paint:
     line-color: '#000000'  
     line-width: 0.6
@@ -16,7 +16,7 @@
   visible: false
   data-type: geojson
   layer-type: fill
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Accessibility-Middle.geojson'
+  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Accessibility-Middle.geojson'
   paint:
     fill-color: 
       property: DN  
@@ -41,7 +41,7 @@
   visible: false  
   data-type: geojson
   layer-type: fill
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Middle-School-Performance.geojson'
+  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Middle-School-Performance.geojson'
   paint:
     fill-color:
       property: Average Score
@@ -74,7 +74,7 @@
   visible: true   
   data-type: 'geojson'
   layer-type: 'circle'
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Middle-School-Locations.geojson'
+  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Middle-School-Locations.geojson'
   paint:
     circle-color: '#FFA500'
     circle-radius: 3
@@ -93,7 +93,7 @@
   visible: false
   data-type: 'geojson'
   layer-type: 'fill'
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/Safety_Middle_School.geojson'
+  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Safety_Middle_School.geojson'
   paint:
     fill-color:
       property: NUMPOINTS
@@ -123,7 +123,7 @@
   visible: false
   data-type: 'geojson'
   layer-type: 'circle'
-  url: 'https://yc4529.github.io/astro-maplibre-template/data/NYPD_Point_Layer.geojson'
+  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/NYPD_Point_Layer.geojson'
   paint:
     circle-color: '#c30d37'
     circle-radius: 1.1
