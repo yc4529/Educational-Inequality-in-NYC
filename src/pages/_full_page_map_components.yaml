@@ -87,6 +87,13 @@
             - property: "location_n"
               else: "N/A"  
 
+legend:
+  title: 'Elementary School'
+  items:
+    - color: '#FFA500'    
+      label: 'Locations'  
+
+
 - id: 'safety-fill-layer'
   label: 'Safety'
   toggle: true
