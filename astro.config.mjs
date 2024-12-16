@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://yc4529.github.io",
-  base: "astro-maplibre-template",
+  base: "Educational Inequality in NYC",
   integrations: [mdx(), sitemap(), tailwind()],
 });
