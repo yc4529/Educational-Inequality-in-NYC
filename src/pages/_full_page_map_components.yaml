@@ -4,137 +4,134 @@ legend:
     - color: '#FFA500'    
       label: 'Locations'  
 
-
-- id: 'elementary-school-zones'
-  label: 'Elementary School Zones'
-  toggle: true
-  visible: true  
-  data-type: 'geojson'
-  layer-type: 'line'  
-  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Elementary-School-Zones.geojson'
-  paint:
-    line-color: '#000000'  
-    line-width: 0.6
-    line-opacity: 0.4
+layers:  
+  - id: 'elementary-school-zones'
+    label: 'Elementary School Zones'
+    toggle: true
+    visible: true  
+    data-type: 'geojson'
+    layer-type: 'line'  
+    url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Elementary-School-Zones.geojson'
+    paint:
+      line-color: '#000000'  
+      line-width: 0.6
+      line-opacity: 0.4
     
-- id: accessibility-layer
-  label: Accessibility
-  toggle: true  
-  visible: false
-  data-type: geojson
-  layer-type: fill
-  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Accessibility.geojson'
-  paint:
-    fill-color: 
-      property: DN  
-      stops:  
-        - [0, '#fff5f0']
-        - [2, '#fee5d9']
-        - [4, '#fdccb8']
-        - [6, '#fcae93']
-        - [8, '#fc8f6f']
-        - [10, '#fb7050']
-        - [12, '#f44d38']
-        - [14, '#e12e26']
-        - [17, '#c5161c']
-        - [20, '#a50f15']
-        - [23, '#67000d']
-    fill-opacity: 1.0   
+  - id: 'accessibility-layer'
+    label: 'Accessibility'
+    toggle: true  
+    visible: false
+    data-type: 'geojson'
+    layer-type: 'fill'
+    url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Accessibility.geojson'
+    paint:
+      fill-color: 
+        property: DN  
+        stops:  
+          - [0, '#fff5f0']
+          - [2, '#fee5d9']
+          - [4, '#fdccb8']
+          - [6, '#fcae93']
+          - [8, '#fc8f6f']
+          - [10, '#fb7050']
+          - [12, '#f44d38']
+          - [14, '#e12e26']
+          - [17, '#c5161c']
+          - [20, '#a50f15']
+          - [23, '#67000d']
+      fill-opacity: 1.0   
 
+  - id: 'performance'
+    label: 'Performance'
+    toggle: true
+    visible: false  
+    data-type: 'geojson'
+    layer-type: 'fill'
+    url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Elementary-School-Performance.geojson'
+    paint:
+      fill-color:
+        property: Average Student Proficiency (Overall)
+        stops:
+          - [0.0000, '#f7fbff']
+          - [2.4700, '#c8dcf0']
+          - [2.8600, '#73b2d8']
+          - [3.2900, '#2979b9']
+          - [4.0600, '#08306b']
+      fill-opacity: 1
+    mouseEvent:
+      - type: "mousemove"
+        content:
+          - p:
+              - str: "Average Student Proficiency ELA: "
+              - property: "Average Student Proficiency ELA"
+                else: "N/A"
+          - p:
+              - str: "Average Student Proficiency Math: "
+              - property: "Average Student Proficiency Math"
+                else: "N/A"
+          - p:
+              - str: "Average Student Proficiency Overall: "
+              - property: "Average Student Proficiency (Overall)"
+                else: "N/A"
 
-- id: performance
-  label: Performance
-  toggle: true
-  visible: false  
-  data-type: geojson
-  layer-type: fill
-  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Elementary-School-Performance.geojson'
-  paint:
-    fill-color:
-      property: Average Student Proficiency (Overall)
-      stops:
-        - [0.0000, '#f7fbff']
-        - [2.4700, '#c8dcf0']
-        - [2.8600, '#73b2d8']
-        - [3.2900, '#2979b9']
-        - [4.0600, '#08306b']
-    fill-opacity: 1
-  mouseEvent:
-    - type: "mousemove"
-      content:
-        - p:
-            - str: "Average Student Proficiency ELA: "
-            - property: "Average Student Proficiency ELA"
-              else: "N/A"
-        - p:
-            - str: "Average Student Proficiency Math: "
-            - property: "Average Student Proficiency Math"
-              else: "N/A"
-        - p:
-            - str: "Average Student Proficiency Overall: "
-            - property: "Average Student Proficiency (Overall)"
-              else: "N/A"
+  - id: 'elementary-school-locations'
+    label: 'Elementary School Locations'
+    visible: true   
+    data-type: 'geojson'
+    layer-type: 'circle'
+    url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Elementary-School-Locations.geojson'
+    paint:
+      circle-color: '#FFA500'
+      circle-radius: 3
+      circle-opacity: 0.8
+    mouseEvent:
+      - type: "click"
+        content:
+          - p:
+              - str: "School Name: "
+              - property: "location_n"
+                else: "N/A"  
 
+  - id: 'safety-fill-layer'
+    label: 'Safety'
+    toggle: true
+    visible: false
+    data-type: 'geojson'
+    layer-type: 'fill'
+    url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Safety_Elementary_School.geojson'
+    paint:
+      fill-color:
+        property: NUMPOINTS
+        stops:
+          - [0, '#f5fcf8']
+          - [43, '#e8f6e3']
+          - [94, '#d0ecc9']
+          - [141, '#b2e0ab']
+          - [191, '#8ed08c']
+          - [258, '#66bd6f']
+          - [366, '#3da75a']
+          - [538, '#248c45']
+          - [1050, '#03702e']
+          - [2132, '#00441b']
+      fill-opacity: 1.0
+    mouseEvent:
+      - type: "mousemove"
+        content:
+          - p:
+              - str: "Crime Report Count"
+              - property: "NUMPOINTS"
+                else: "N/A"
 
-- id: 'elementary-school-locations'
-  label: 'Elementary School Locations'
-  visible: true   
-  data-type: 'geojson'
-  layer-type: 'circle'
-  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Elementary-School-Locations.geojson'
-  paint:
-    circle-color: '#FFA500'
-    circle-radius: 3
-    circle-opacity: 0.8
-  mouseEvent:
-    - type: "click"
-      content:
-        - p:
-            - str: "School Name: "
-            - property: "location_n"
-              else: "N/A"  
-
-
-- id: 'safety-fill-layer'
-  label: 'Safety'
-  toggle: true
-  visible: false
-  data-type: 'geojson'
-  layer-type: 'fill'
-  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/Safety_Elementary_School.geojson'
-  paint:
-    fill-color:
-      property: NUMPOINTS
-      stops:
-        - [0, '#f5fcf8']
-        - [43, '#e8f6e3']
-        - [94, '#d0ecc9']
-        - [141, '#b2e0ab']
-        - [191, '#8ed08c']
-        - [258, '#66bd6f']
-        - [366, '#3da75a']
-        - [538, '#248c45']
-        - [1050, '#03702e']
-        - [2132, '#00441b']
-    fill-opacity: 1.0
-  mouseEvent:
-    - type: "mousemove"
-      content:
-        - p:
-            - str: "Crime Report Count"
-            - property: "NUMPOINTS"
-              else: "N/A"
-
-- id: 'nypd-point-layer'
-  label: 'NYPD Point Layer'
-  toggle: false
-  visible: false
-  data-type: 'geojson'
-  layer-type: 'circle'
-  url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/NYPD_Point_Layer.geojson'
-  paint:
-    circle-color: '#c30d37'
-    circle-radius: 1.1
-    circle-opacity: 0.2
+  - id: 'nypd-point-layer'
+    label: 'NYPD Point Layer'
+    toggle: false
+    visible: false
+    data-type: 'geojson'
+    layer-type: 'circle'
+    url: 'https://yc4529.github.io/Educational-Inequality-in-NYC/data/NYPD_Point_Layer.geojson'
+    paint:
+      circle-color: '#c30d37'
+      circle-radius: 1.1
+      circle-opacity: 0.2
 
 
